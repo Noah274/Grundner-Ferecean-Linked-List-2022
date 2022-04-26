@@ -74,7 +74,7 @@ int main()
         return 0;
 }
 /*
- * Creates a struct but teh user can choose the size of the struct
+ * Creates a list but teh user can choose the size of the struct
  *
  * @returns nothing 
  */
@@ -105,7 +105,7 @@ void create()
         }
 }
 /*
- * Prints the struct 
+ * Prints the list 
  *
  * @returns nothing
  */

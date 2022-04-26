@@ -1,4 +1,3 @@
-```c
 #include<stdio.h>
 #include<stdlib.h>
 struct Node;
@@ -10,7 +9,7 @@ typedef PtrToNode Position;
  */
 struct Node
 {
-    int e;
+    char data;              
     Position previous;
     Position next;
 };
@@ -25,15 +24,15 @@ struct Node
  */
 void Insert(int x, List l, Position p)
 {
-    Position TmpCell;
-    TmpCell = (struct Node*) malloc(sizeof(struct Node));
-    if(TmpCell == NULL)
+    Position tempItem;
+    tempItem = (struct Node*) malloc(sizeof(struct Node));
+    if(tempItem == NULL)
         printf("Memory out of spacen");
     else
     {
-        TmpCell->e = x;
-        TmpCell->previous = p;
-        TmpCell->next = p->next;
+        tempItem->data = x;
+        tempItem->previous = p;
+        tempItem->next = p->next;
         p->next = TmpCell;
     }
 }
@@ -84,7 +83,7 @@ void Display(List l)
   
 int main()
 {
-    int x, pos, ch, i;
+    int x, pos, input, i;
     List l, l1;
     l = (struct Node *) malloc(sizeof(struct Node));
     l->previous = NULL;
@@ -94,8 +93,8 @@ int main()
     do
     {
         printf("nn1. CREATEn 2. DELETEn  3. DISPLAYn 4. QUITnnEnter the choice :: ");
-        scanf("%d", &ch);
-        switch(ch)
+        scanf("%d", &input);
+        switch(input)
         {
         case 1:
             p = l;
@@ -122,5 +121,5 @@ int main()
             break;
         }
     }
-    while(ch<4);
+    while(input<4);
 }```
